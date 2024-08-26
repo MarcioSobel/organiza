@@ -1,3 +1,3 @@
-export default function Home() {
+export default function Investments() {
   return <p>Investments</p>;
 }
