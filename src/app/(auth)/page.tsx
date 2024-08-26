@@ -1,5 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
+import { AuthNavBar } from "./_components/navbar";
 
 export default function Auth() {
   const router = useRouter();
@@ -10,8 +11,13 @@ export default function Auth() {
 
   return (
     <>
-      <p>Pagina de login/cadastro</p>
-      <button onClick={handleButton}>Ir para o dashboard</button>
+      <AuthNavBar />
+      <div className="flex flex-col gap-1 justify-center items-center w-full h-screen">
+        <p>Pagina de login/cadastro</p>
+        <button onClick={handleButton}>
+          <strong>Ir para o dashboard</strong>
+        </button>
+      </div>
     </>
   );
 }
