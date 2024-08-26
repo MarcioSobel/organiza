@@ -1,12 +1,14 @@
 "use client";
 import { useState } from "react";
 import { SidebarButtons } from "./sidebar-buttons";
-import { Logo } from "./logo";
-import { List } from "@phosphor-icons/react";
+import { Logo } from "@/components/logo";
+import { List as MenuIcon } from "@phosphor-icons/react";
 import { LogoutButton } from "./logout-button";
+import { useRouter } from "next/navigation";
 
 export function Sidebar() {
-  const [isOpened, setIsOpened] = useState(true);
+  const [isOpened, setIsOpened] = useState(false);
+  const router = useRouter();
 
   const handleExpand = () => {
     setIsOpened((prev) => !prev);
@@ -17,12 +19,12 @@ export function Sidebar() {
       className={`flex flex-col bg-[#2C2C2C] p-3 gap-8 h-screen ${isOpened ? "w-[230px]" : "w-[74px]"} transition-all overflow-hidden`}
     >
       <div className="flex flex-col justify-center items-center gap-2">
-        <List
+        <MenuIcon
           className={`cursor-pointer ${isOpened ? "self-end" : ""}`}
           onClick={handleExpand}
           size={32}
         />
-        <Logo showText={isOpened} />
+        <Logo showText={isOpened} onClick={() => router.push("/home")} />
       </div>
       <div className="flex flex-col h-full justify-between">
         <SidebarButtons />
