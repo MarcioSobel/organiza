@@ -48,7 +48,7 @@ export function SidebarButtons() {
         return (
           <Link key={key} href={button.path} passHref>
             <button
-              className={`flex w-full gap-3 self-start items-center rounded-md p-2 ${selected ? "bg-[#444444]" : "bg-transparent hover:bg-[#444444]/50"} overflow-hidden`}
+              className={`flex w-full gap-3 self-start items-center rounded-md p-2 ${selected ? "bg-off-grey" : "bg-transparent hover:bg-off-grey/50"} overflow-hidden`}
             >
               <div className="flex justify-center items-center">
                 <Icon size={32} weight={selected ? "fill" : "regular"} />

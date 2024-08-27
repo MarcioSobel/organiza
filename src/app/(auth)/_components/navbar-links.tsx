@@ -26,7 +26,7 @@ export function AuthNavBarLinks() {
     <div className="flex gap-6 justify-center">
       {links.map((link, key) => (
         <NavbarLink href={link.path} key={key}>
-          <button className="whitespace-nowrap">{link.label}</button>
+          <button className="whitespace-nowrap text-white">{link.label}</button>
         </NavbarLink>
       ))}
     </div>

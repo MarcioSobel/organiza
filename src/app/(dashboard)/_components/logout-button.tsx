@@ -14,7 +14,7 @@ export function LogoutButton({ showText }: LogoutButtonProps) {
   return (
     <button
       onClick={handleLogout}
-      className="flex items-center gap-3 py-2 justify-center w-full rounded-md bg-[#444444] hover:bg-[#555555] whitespace-nowrap"
+      className="flex items-center gap-3 py-2 justify-center w-full rounded-md bg-off-grey hover:bg-[#555555] whitespace-nowrap"
     >
       <SignOut size={32} />
       {showText && <p className="text-xl">Sair</p>}
