@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Roboto, Roboto_Slab } from "next/font/google";
 import "./globals.css";
+import { cn } from "@/lib/utils";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -8,7 +9,7 @@ const roboto = Roboto({
   variable: "--font-roboto",
 });
 
-const robotoSlab = Roboto({
+const robotoSlab = Roboto_Slab({
   subsets: ["latin"],
   weight: ["100", "300", "400", "500", "700", "900"],
   variable: "--font-roboto-slab",
@@ -26,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${roboto.variable} ${robotoSlab.variable}`}>
+      <body className={cn(roboto.className, robotoSlab.className)}>
         {children}
       </body>
     </html>

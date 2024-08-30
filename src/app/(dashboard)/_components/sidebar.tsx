@@ -16,7 +16,7 @@ export function Sidebar() {
 
   return (
     <aside
-      className={`flex flex-col bg-off-black p-3 gap-8 h-screen ${isOpened ? "w-[230px]" : "w-[74px]"} transition-all overflow-hidden`}
+      className={`flex flex-col bg-off-black p-3 gap-8 h-screen ${isOpened ? "w-[236px]" : "w-[74px]"} transition-[width] overflow-hidden text-white`}
     >
       <div className="flex flex-col justify-center items-center gap-2">
         <MenuIcon

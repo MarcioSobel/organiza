@@ -9,7 +9,7 @@ interface LogoProps {
 export function Logo({ showText, onClick, size = 32 }: LogoProps) {
   return (
     <div
-      className={`flex gap-2 overflow-hidden ${onClick ? "cursor-pointer" : ""}`}
+      className={`flex gap-2 overflow-hidden text-white ${onClick ? "cursor-pointer" : ""}`}
       onClick={onClick}
     >
       <Image
