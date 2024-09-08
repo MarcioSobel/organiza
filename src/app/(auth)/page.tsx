@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function Auth() {
   return (
     <>
-      <div className="flex gap-24 m-auto px-6 justify-center items-center w-full h-screen bg-white text-off-black">
+      <div className="flex gap-24 m-auto px-6 justify-center items-center w-full h-[100dvh] bg-white text-off-black">
         <Image
           src="/computer-login-1.png"
           alt="login-background"

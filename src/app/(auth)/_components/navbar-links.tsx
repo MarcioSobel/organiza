@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -6,7 +7,13 @@ type Link = {
   path: `/${string}`;
 };
 
-export function AuthNavBarLinks() {
+interface AuthNavBarLinkProps {
+  orientation?: "horizontal" | "vertical";
+}
+
+export function AuthNavBarLinks({
+  orientation = "horizontal",
+}: AuthNavBarLinkProps) {
   const links: Link[] = [
     {
       label: "Início",
@@ -23,9 +30,11 @@ export function AuthNavBarLinks() {
   ];
 
   return (
-    <div className="flex gap-6 justify-center">
+    <div
+      className={`flex ${orientation === "horizontal" ? "gap-6 justify-center" : "flex-col gap-2 items-start"}`}
+    >
       {links.map((link, key) => (
-        <NavbarLink href={link.path} key={key}>
+        <NavbarLink href={link.path} key={key} orientation={orientation}>
           <button className="whitespace-nowrap text-white">{link.label}</button>
         </NavbarLink>
       ))}
@@ -33,13 +42,14 @@ export function AuthNavBarLinks() {
   );
 }
 
-interface AuthNavBarLinkProps {
+interface NavBarLinkProps {
+  orientation: "vertical" | "horizontal";
   href: string;
   index?: number;
   children?: React.ReactNode;
 }
 
-function NavbarLink({ index, href, children }: AuthNavBarLinkProps) {
+function NavbarLink({ orientation, index, href, children }: NavBarLinkProps) {
   const [isHovered, setIsHovered] = useState(false);
 
   const updateIsHovered = () => setIsHovered((prev) => !prev);
@@ -49,7 +59,7 @@ function NavbarLink({ index, href, children }: AuthNavBarLinkProps) {
       key={index}
       href={href}
       passHref
-      className="group flex flex-col px-2 py-1"
+      className={`group ${orientation === "horizontal" ? "sm:flex hidden px-2" : "flex pl-px"} flex-col py-1`}
       onMouseEnter={updateIsHovered}
       onMouseLeave={updateIsHovered}
     >
