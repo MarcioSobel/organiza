@@ -24,7 +24,7 @@ export function Logo({ showText, onClick, size = 32, darkMode }: LogoProps) {
         height={size}
         priority
       />
-      {showText && <p className="text-2xl select-none pb-0.5">Organiza</p>}
+      {showText && <p className="text-2xl select-none">Organiza</p>}
     </div>
   );
 }

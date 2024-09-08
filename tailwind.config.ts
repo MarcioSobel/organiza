@@ -68,9 +68,6 @@ const config = {
         roboto: "var(--font-roboto)",
         "roboto-slab": "var(--font-roboto-slab)",
       },
-      boxShadow: {
-        offset: "2px 2px",
-      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
