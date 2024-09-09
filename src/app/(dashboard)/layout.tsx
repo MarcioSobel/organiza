@@ -6,9 +6,9 @@ interface Props {
 
 export default function DashboardLayout({ children }: Props) {
   return (
-    <main className="flex overflow-y-hidden max-h-screen">
+    <main className="flex flex-col-reverse h-[100dvh] sm:flex-row overflow-y-hidden max-h-screen">
       <Sidebar />
-      <div>{children}</div>
+      <div className="h-full">{children}</div>
     </main>
   );
 }

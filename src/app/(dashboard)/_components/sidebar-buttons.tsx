@@ -5,9 +5,15 @@ import {
   Icon,
   PiggyBank,
   Receipt,
+  SignOut,
 } from "@phosphor-icons/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { LogoutButton } from "./logout-button";
+
+interface SidebarButtonProps {
+  isOpened: boolean;
+}
 
 type SidebarButton = {
   path: `/${string}`;
@@ -15,7 +21,7 @@ type SidebarButton = {
   icon: Icon;
 };
 
-export function SidebarButtons() {
+export function SidebarButtons({ isOpened }: SidebarButtonProps) {
   const currentPath = usePathname();
   const buttons: SidebarButton[] = [
     {
@@ -39,8 +45,9 @@ export function SidebarButtons() {
       icon: Receipt,
     },
   ];
+
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex sm:flex-col justify-evenly sm:justify-start w-full h-full gap-2">
       {buttons.map((button, key) => {
         const selected = currentPath === button.path;
         const Icon = button.icon;
@@ -53,11 +60,23 @@ export function SidebarButtons() {
               <div className="flex justify-center items-center">
                 <Icon size={32} weight={selected ? "fill" : "regular"} />
               </div>
-              <p className="whitespace-nowrap">{button.label}</p>
+              <p className="hidden sm:inline whitespace-nowrap">
+                {button.label}
+              </p>
             </button>
           </Link>
         );
       })}
+
+      <Link
+        href="/"
+        className="p-2 w-fit sm:w-full sm:mt-auto rounded-md bg-off-grey hover:bg-[#555555] whitespace-nowrap"
+      >
+        <button className="flex items-center gap-3 justify-center w-full">
+          <SignOut size={32} />
+          {isOpened && <p className="text-xl hidden sm:inline">Sair</p>}
+        </button>
+      </Link>
     </div>
   );
 }
