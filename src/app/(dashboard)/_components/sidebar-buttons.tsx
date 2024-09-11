@@ -1,5 +1,6 @@
 "use client";
 import {
+  CalendarDots,
   ChartLineUp,
   House,
   Icon,
@@ -9,7 +10,6 @@ import {
 } from "@phosphor-icons/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LogoutButton } from "./logout-button";
 
 interface SidebarButtonProps {
   isOpened: boolean;
@@ -43,6 +43,11 @@ export function SidebarButtons({ isOpened }: SidebarButtonProps) {
       path: "/receipts",
       label: "Receitas e despesas",
       icon: Receipt,
+    },
+    {
+      path: "/reminders",
+      label: "Lembretes",
+      icon: CalendarDots,
     },
   ];
 
