@@ -1,5 +1,6 @@
 "use client";
 import {
+  CalendarDots,
   ChartLineUp,
   House,
   Icon,
@@ -43,6 +44,11 @@ export function SidebarButtons({ isOpened }: SidebarButtonProps) {
       path: "/receipts",
       label: "Receitas e despesas",
       icon: Receipt,
+    },
+    {
+      path: "/reminders",
+      label: "Lembretes",
+      icon: CalendarDots,
     },
   ];
 
