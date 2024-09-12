@@ -1,3 +1,10 @@
+import ReceiptsHistory from "./_components/receipts-history";
+
 export default function Home() {
-  return <p>Home</p>;
+  return (
+    <div>
+      <ReceiptsHistory />
+      <p>Home</p>
+    </div>
+  );
 }
