@@ -1,3 +1,6 @@
 export default function Budgets() {
-  return <p>Budgets</p>;
+  return <p>Budgets
+
+    Carlinhos e Biel começaram os processos por aqui.
+  </p>;
 }
