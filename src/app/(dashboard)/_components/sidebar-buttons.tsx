@@ -21,6 +21,18 @@ type SidebarButton = {
   icon: Icon;
 };
 
+const LogoutButton = ({ isOpened = false }: { isOpened?: boolean }) => (
+  <Link
+    href="/login"
+    className="p-2 pb-3 sm:pb-2 w-fit sm:w-full sm:mt-auto rounded-md bg-off-grey hover:bg-[#555555] whitespace-nowrap"
+  >
+    <button className="flex items-center gap-3 justify-center w-full">
+      <SignOut size={32} />
+      {isOpened && <p className="text-xl hidden sm:inline">Sair</p>}
+    </button>
+  </Link>
+);
+
 export function SidebarButtons({ isOpened }: SidebarButtonProps) {
   const currentPath = usePathname();
   const buttons: SidebarButton[] = [
@@ -72,16 +84,7 @@ export function SidebarButtons({ isOpened }: SidebarButtonProps) {
           </Link>
         );
       })}
-
-      <Link
-        href="/"
-        className="p-2 w-fit sm:w-full sm:mt-auto rounded-md bg-off-grey hover:bg-[#555555] whitespace-nowrap"
-      >
-        <button className="flex items-center gap-3 justify-center w-full">
-          <SignOut size={32} />
-          {isOpened && <p className="text-xl hidden sm:inline">Sair</p>}
-        </button>
-      </Link>
+      <LogoutButton isOpened={isOpened} />
     </div>
   );
 }
