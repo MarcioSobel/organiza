@@ -11,6 +11,7 @@ export default function Login() {
         height={0}
         sizes={"100vw"}
         className="w-fit h-fit hidden md:block"
+        priority
       />
       <CardLogin />
     </div>

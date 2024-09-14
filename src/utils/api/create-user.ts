@@ -15,7 +15,7 @@ export async function createUser(
   const passwordHash = await hash(data.password, 4);
   const createResponse = await server.post("/users", {
     ...data,
-    surname: data.surname ? data.surname : null,
+    surname: data.surname || null,
     password: undefined,
     passwordHash,
   });

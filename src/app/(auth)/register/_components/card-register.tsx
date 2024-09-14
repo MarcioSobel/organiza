@@ -125,6 +125,7 @@ export function CardRegister() {
               onClick={goToLoginPage}
             >
               <Button
+                type="button"
                 variant="link"
                 className="p-0 h-fit text-base font-bold hover:no-underline"
               >
