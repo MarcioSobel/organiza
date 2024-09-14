@@ -1,11 +1,11 @@
 {
   "users": [
     {
-      "id": "6cf1",
+      "id": "e8be",
       "name": "admin",
-      "surname": "",
+      "surname": null,
       "email": "admin@email.com",
-      "password": "admin"
+      "passwordHash": "$2a$04$QE2Psx72MkLX/gDnlL3Lse6fHQkvz7C3/xBWDhd/MlXhM6ls6p1tS"
     }
   ]
 }
