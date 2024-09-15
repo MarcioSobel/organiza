@@ -47,7 +47,7 @@ export function SidebarButtons({ isOpened }: SidebarButtonProps) {
   const currentPath = usePathname();
   const buttons: SidebarButton[] = [
     {
-      path: "/home",
+      path: "/",
       label: "Início",
       icon: House,
     },

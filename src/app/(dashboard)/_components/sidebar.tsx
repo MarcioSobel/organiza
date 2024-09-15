@@ -3,11 +3,9 @@ import { useState } from "react";
 import { SidebarButtons } from "./sidebar-buttons";
 import { Logo } from "@/components/logo";
 import { List as MenuIcon } from "@phosphor-icons/react";
-import { useRouter } from "next/navigation";
 
 export function Sidebar() {
   const [isOpened, setIsOpened] = useState(false);
-  const router = useRouter();
 
   const handleExpand = () => {
     setIsOpened((prev) => !prev);

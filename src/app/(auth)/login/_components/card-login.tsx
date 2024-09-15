@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { toast } from "@/hooks/use-toast";
-import api from "@/utils/api/api";
+import api from "@/utils/api";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
