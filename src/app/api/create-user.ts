@@ -1,5 +1,5 @@
+import { server, User } from "@/utils/api";
 import { hash } from "bcryptjs";
-import { server, User } from "./api";
 
 export async function createUser(
   data: Omit<User, "passwordHash" | "id"> & { password: string },
@@ -14,9 +14,9 @@ export async function createUser(
 
   const passwordHash = await hash(data.password, 4);
   const createResponse = await server.post("/users", {
-    ...data,
+    name: data.name,
     surname: data.surname || null,
-    password: undefined,
+    email: data.email,
     passwordHash,
   });
 

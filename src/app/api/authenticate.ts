@@ -1,5 +1,5 @@
+import { server, User } from "@/utils/api";
 import { compare, hash } from "bcryptjs";
-import { server, User } from "./api";
 import { setCookie } from "cookies-next";
 
 type AuthenticationRequest = { email: string; password: string };
