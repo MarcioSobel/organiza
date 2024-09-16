@@ -13,6 +13,7 @@ import { Separator } from "@/components/ui/separator";
 import { useToast } from "@/hooks/use-toast";
 import api from "@/utils/api";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { AxiosError } from "axios";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -51,15 +52,21 @@ export function CardRegister() {
   };
 
   function handleCreateAccount(data: RegisterUserSchema) {
-    api.createUser(data).catch(() => {
-      toast({
-        title: "Usuário já cadastrado.",
-        description: "Este e-mail já está sendo utilizado.",
-        variant: "destructive",
-      });
-    });
+    api
+      .post("/register", data)
+      .then(goToLoginPage)
+      .catch((error: AxiosError) => {
+        if (error.status !== 409) {
+          console.log(error);
+          return;
+        }
 
-    goToLoginPage();
+        toast({
+          title: "Usuário já cadastrado.",
+          description: "Este e-mail já está sendo utilizado.",
+          variant: "destructive",
+        });
+      });
   }
 
   const updateIsHovered = () => setIsHovered((prev) => !prev);

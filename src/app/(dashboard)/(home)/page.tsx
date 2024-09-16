@@ -3,13 +3,16 @@
 import ReceiptsHistory from "./_components/receipts-history";
 import { useRouter } from "next/navigation";
 import { hasCookie } from "cookies-next";
+import { useEffect } from "react";
 
 export default function Home() {
   const router = useRouter();
-  if (!hasCookie("token")) {
-    // ...
-    setTimeout(() => router.push("/login"), 10);
-  }
+
+  useEffect(() => {
+    if (!hasCookie("token")) {
+      router.push("/login");
+    }
+  }, []);
 
   return (
     <div>

@@ -1,22 +1,17 @@
-import { authenticate } from "@/app/api/authenticate";
-import { createUser } from "@/app/api/create-user";
 import axios from "axios";
 
-export const server = axios.create({
+export const db = axios.create({
   baseURL: "http://localhost:3333",
 });
+
+const api = axios.create({
+  baseURL: "/api",
+});
+export default api;
 
 export type User = {
   id: string;
   name: string;
   surname: string | null;
   email: string;
-  passwordHash: string;
 };
-
-const api = {
-  createUser,
-  authenticate,
-};
-
-export default api;

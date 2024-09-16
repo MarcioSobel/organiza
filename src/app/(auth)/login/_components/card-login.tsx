@@ -12,14 +12,15 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { toast } from "@/hooks/use-toast";
 import api from "@/utils/api";
+import { AxiosError } from "axios";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 const authenticationSchema = z.object({
-  email: z.string().email(),
-  password: z.string(),
+  email: z.string().email().min(1, "Campo obrigatório"),
+  password: z.string().min(1, "Campo obrigatório"),
 });
 
 type AuthenticationSchema = z.infer<typeof authenticationSchema>;
@@ -45,9 +46,14 @@ export function CardLogin() {
 
   const handleLogin = (data: AuthenticationSchema) => {
     api
-      .authenticate(data)
+      .post("/auth", data)
       .then(goToHomepage)
-      .catch(() => {
+      .catch((error: AxiosError) => {
+        if (error.status !== 400) {
+          console.log(error);
+          return;
+        }
+
         toast({
           title: "E-mail ou senha inválidos.",
           variant: "destructive",
