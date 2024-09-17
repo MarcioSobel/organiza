@@ -1,7 +1,8 @@
 import axios from "axios";
+import { env } from "./env";
 
 export const db = axios.create({
-  baseURL: "http://localhost:3333",
+  baseURL: env.MOCKAPI_URL,
 });
 
 const api = axios.create({
