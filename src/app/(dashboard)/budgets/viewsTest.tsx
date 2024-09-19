@@ -4,27 +4,34 @@ import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
 
 import { ChartConfig, ChartContainer, ChartLegend, ChartLegendContent, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
 
-const chartData = [
-  { month: "January", Orçamento: 186, Gasto: 80 },
-  { month: "February", Orçamento: 305, Gasto: 200 },
-  { month: "March", Orçamento: 237, Gasto: 120 },
-  { month: "April", Orçamento: 73, Gasto: 190 },
-  { month: "May", Orçamento: 209, Gasto: 130 },
-  { month: "June", Orçamento: 214, Gasto: 140 },
-]
+import  {useState} from "react";
 
-const chartConfig = {
+export function TesteGraf(){
+  const[chartData,setChartData] = useState([{month: "January", Orçamento: 186, Gasto:80}
+
+  ]);
+  
+  const addToChart = (data: (typeof chartData)[number]) => {
+    setChartData((prev) => { 
+      const uptade = [...prev];
+      uptade.push(data);
+      return uptade;
+     })
+
+  }
+
+  const chartConfig: ChartConfig = {
     Orçamento: {
-    label: "Orçamento(R$)",
-    color: "#2563eb",
-  },
-  Gasto: {
-    label: "Gasto(R$)",
-    color: "#60a5fa",
-  },
-} satisfies ChartConfig
+      label: "Orçamento(R$)",
+      color:"#2563eb"
+    },
+    Gasto: {
+      label: "Gasto(R$)",
+      color:"#60a5fa"
+    }
+  };
 
-export function TesteGraf() {
+
   return (
     <ChartContainer config={chartConfig} className="h-[200px] w-full">
   <BarChart accessibilityLayer data={chartData}>
@@ -42,9 +49,7 @@ export function TesteGraf() {
     <Bar dataKey="Gasto" fill="var(--color-Gasto)" radius={4} />
   </BarChart>
 </ChartContainer>
-  )
+  );
 }
-
-
 
 
