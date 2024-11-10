@@ -8,6 +8,7 @@ import {
   CardHeader,
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import { formatToBRL } from "@/utils/format-to-brl";
 import { Minus, Plus } from "lucide-react";
 import { useRouter } from "next/navigation";
 
@@ -36,8 +37,6 @@ function ReceiptTransaction({
     month = "0" + month;
   }
 
-  const isValueDecimal = Math.floor(value) < value && value < Math.ceil(value);
-
   return (
     <div className="flex gap-2 font-bold font-roboto-slab">
       <div className="h-full">
@@ -51,10 +50,7 @@ function ReceiptTransaction({
       <div className="w-full">
         <div className="flex justify-between items-center gap-16">
           <p className="text-xl">
-            R${" "}
-            {isValueDecimal
-              ? value.toString().replace(".", ",")
-              : `${value},00`}
+            {formatToBRL(value)}
           </p>
           <p className="text-off-black/65 font-medium">
             {day}/{month}/{year}
