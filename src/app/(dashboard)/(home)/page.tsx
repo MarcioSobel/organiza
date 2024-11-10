@@ -4,6 +4,7 @@ import ReceiptsHistory from "./_components/receipts-history";
 import { useRouter } from "next/navigation";
 import { hasCookie } from "cookies-next";
 import { useEffect } from "react";
+import { LastBudgets } from "./_components/last-budgets";
 
 export default function Home() {
   const router = useRouter();
@@ -12,11 +13,18 @@ export default function Home() {
     if (!hasCookie("token")) {
       router.push("/login");
     }
-  }, []);
+  }, [router]);
 
   return (
-    <div>
-      <ReceiptsHistory />
+    <div className="p-12">
+      <div className="flex gap-4">
+        <div>
+          <ReceiptsHistory />
+        </div>
+        <div className="flex flex-col gap-4 w-full">
+          <LastBudgets />
+        </div>
+      </div>
       <p>Home</p>
     </div>
   );
