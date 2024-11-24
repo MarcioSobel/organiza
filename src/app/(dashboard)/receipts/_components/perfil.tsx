@@ -1,87 +1,27 @@
+"use client";
 import { Button } from "@/components/ui/button"
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuGroup,
-    DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuPortal,
-    DropdownMenuSeparator,
-    DropdownMenuShortcut,
-    DropdownMenuSub,
-    DropdownMenuSubContent,
-    DropdownMenuSubTrigger,
-    DropdownMenuTrigger,
-  } from "@/components/ui/dropdown-menu";
-  import Image from "next/image";
-
+import Image from "next/image";
+import { CaretDown, SignOut } from "@phosphor-icons/react";
 
 export const Perfil = () => {
-  return (
-    <DropdownMenu>
-    <DropdownMenuTrigger asChild>
-      <Button variant="outline">
-        <Image 
-        src="/icone_perfil_header.png"
-        alt="Foto de Perfil."
-        width={32}
-        height={32}
-        />
-        <h1>Joana Silva</h1>
-        <h2>joanasilva@gmail.com</h2>
-        
-      </Button>
-    </DropdownMenuTrigger>
-    <DropdownMenuContent className="w-56">
-      <DropdownMenuLabel>My Account</DropdownMenuLabel>
-      <DropdownMenuSeparator />
-      <DropdownMenuGroup>
-        <DropdownMenuItem>
-          Profile
-          <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
-        </DropdownMenuItem>
-        <DropdownMenuItem>
-          Billing
-          <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
-        </DropdownMenuItem>
-        <DropdownMenuItem>
-          Settings
-          <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
-        </DropdownMenuItem>
-        <DropdownMenuItem>
-          Keyboard shortcuts
-          <DropdownMenuShortcut>⌘K</DropdownMenuShortcut>
-        </DropdownMenuItem>
-      </DropdownMenuGroup>
-      <DropdownMenuSeparator />
-      <DropdownMenuGroup>
-        <DropdownMenuItem>Team</DropdownMenuItem>
-        <DropdownMenuSub>
-          <DropdownMenuSubTrigger>Invite users</DropdownMenuSubTrigger>
-          <DropdownMenuPortal>
-            <DropdownMenuSubContent>
-              <DropdownMenuItem>Email</DropdownMenuItem>
-              <DropdownMenuItem>Message</DropdownMenuItem>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>More...</DropdownMenuItem>
-            </DropdownMenuSubContent>
-          </DropdownMenuPortal>
-        </DropdownMenuSub>
-        <DropdownMenuItem>
-          New Team
-          <DropdownMenuShortcut>⌘+T</DropdownMenuShortcut>
-        </DropdownMenuItem>
-      </DropdownMenuGroup>
-      <DropdownMenuSeparator />
-      <DropdownMenuItem>GitHub</DropdownMenuItem>
-      <DropdownMenuItem>Support</DropdownMenuItem>
-      <DropdownMenuItem disabled>API</DropdownMenuItem>
-      <DropdownMenuSeparator />
-      <DropdownMenuItem>
-        Log out
-        <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
-      </DropdownMenuItem>
-    </DropdownMenuContent>
-  </DropdownMenu>
-  )
+    return (
+        <div className="dropdown">
+            <div tabIndex={0} role="button" className="btn m-1">
+            <Image 
+            src="/icone_perfil_header.png"
+            alt="foto de perfil"
+            width={32}
+            height={32}
+            />
+            <h1>Joana Silva</h1>
+            <h2>joanasilva@email.com</h2>
+            <CaretDown size={32} />
+            </div>
+            <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                <li><a>Editar perfil</a></li>
+                <li><a>Configurações</a></li>
+                <li><a>Sair <SignOut size={32} /></a></li>
+            </ul>
+        </div>
+    )
 }
