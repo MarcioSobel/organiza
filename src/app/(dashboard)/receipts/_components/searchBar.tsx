@@ -4,8 +4,8 @@ import { MagnifyingGlass, DotsThreeOutlineVertical, Funnel } from "@phosphor-ico
 import { Input } from "@/components/ui/input";
 export const SearchBar = () => {
     return (
-        <div className="p-6 flex flex-row w-full justify-between">
-            <h1>Suas Despesas</h1>
+        <div className="flex flex-row w-full justify-between items-center">
+            <h1 className="text-base font-bold">Suas Despesas</h1>
             <div className="flex justify-between items-center gap-2">
                 <div className="flex px-4 py-3 rounded-md border border-r-2 border-b-2 border-gray-900 overflow-hidden m-30 h-12 font-[sans-serif]">
                     <input type="email" placeholder="Pesquisar..."
