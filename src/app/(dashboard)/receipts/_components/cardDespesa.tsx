@@ -48,7 +48,7 @@ export const CardDespesa:React.FC<CardAtributos> = ({id, categoria, nomeDaDespes
                     <button>
                     <PencilSimple size={24} color={mouseSobre ? "#e0ac01" : "#181616"} weight={mouseSobre ? "fill" : "regular"} onMouseOver={()=>setMouseSobre(true)} onMouseOut={()=>setMouseSobre(false)} />
                     </button>
-                    <button type="submit" onClick={()=>handleDelete({id})}>
+                    <button type="submit" onClick={()=>handleDelete(id)}>
                     <Trash size={24} color={mouseSobre ? "#852418" : "#181616"} weight={mouseSobre ? "fill" : "regular"} onMouseOver={()=>setMouseSobre(true)} onMouseOut={()=>setMouseSobre(false)} />
                     </button>
                 </div>
