@@ -66,8 +66,8 @@ const config = {
       },
       fontFamily: {
         roboto: "var(--font-roboto)",
-        "roboto-slab": "var(--font-roboto-slab)",
-      },
+        robotoSlab: "var(--font-roboto-slab)",
+      },      
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",

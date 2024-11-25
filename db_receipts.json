@@ -1,0 +1,84 @@
+{
+    "card": [
+        {
+            "id": "01",
+            "categoria": "streamings",
+            "nomeDaDespesa": "Netflix",
+            "dataDeVencimento": "15/08/2024",
+            "valor": 59.90,
+            "pago": true
+        },
+        {
+            "id": "02",
+            "categoria": "streamings",
+            "nomeDaDespesa": "Max",
+            "dataDeVencimento": "10/08/2024",
+            "valor": 27.90,
+            "pago": false
+        },
+        {
+            "id": "03",
+            "categoria": "lazer",
+            "nomeDaDespesa": "Viagem p/ Porto",
+            "dataDeVencimento": "24/08/2024",
+            "valor": 230.80,
+            "pago": true
+        },
+        {
+            "id": "04",
+            "categoria": "pessoal",
+            "nomeDaDespesa": "Academia",
+            "dataDeVencimento": "10/08/2024",
+            "valor": 109.90,
+            "pago": true
+        },
+        {
+            "id": "05",
+            "categoria": "pessoal",
+            "nomeDaDespesa": "Feira",
+            "dataDeVencimento": "20/08/2024",
+            "valor": 59.90,
+            "pago": true
+        },
+        {
+            "id": "06",
+            "categoria": "casa",
+            "nomeDaDespesa": "Água",
+            "dataDeVencimento": "10/08/2024",
+            "valor": 95.76,
+            "pago": false
+        },
+        {
+            "id": "07",
+            "categoria": "casa",
+            "nomeDaDespesa": "Luz",
+            "dataDeVencimento": "09/08/2024",
+            "valor": 221.87,
+            "pago": false
+        },
+        {
+            "id": "08",
+            "categoria": "casa",
+            "nomeDaDespesa": "Aluguel",
+            "dataDeVencimento": "05/08/2024",
+            "valor": 1568.00,
+            "pago": true
+        },
+        {
+            "id": "09",
+            "categoria": "pessoal",
+            "nomeDaDespesa": "Skin-care",
+            "dataDeVencimento": "08/08/2024",
+            "valor": 250.00,
+            "pago": true
+        },
+        {
+            "id": "10",
+            "categoria": "pessoal",
+            "nomeDaDespesa": "Manutenção do Carro",
+            "dataDeVencimento": "28/08/2024",
+            "valor": 1200.00,
+            "pago": true
+        }
+    ]   
+}

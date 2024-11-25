@@ -1,6 +1,5 @@
 import { Perfil } from "./perfil";
 import { MenuAbas } from "./menuAbas";
-import { Separador } from "./separador";
 
 export const Header = () => {
     return (

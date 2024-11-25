@@ -1,17 +1,26 @@
-import { CardDespesa } from "./cardDespesa";
+"use client"
+import data from "../../../../../db_receipts.json";
 import { ButtonAdicionar } from "./buttonAdicionar";
+import { CardDespesa, Receipt } from "./cardDespesa";
+import { useEffect, useState } from "react";
 
-export const GridCards = () => {
+
+export default function GridCards() {
+  
+  const[cards, setCards] = useState<Receipt[]>(data.card as Receipt[])
+ 
   return (
-    <div className=" max-w-full flex flex-wrap gap-4">
-        <CardDespesa />
-        <CardDespesa />
-        <CardDespesa />
-        <CardDespesa />
-        <CardDespesa />
-        <CardDespesa />
-        <CardDespesa />   
-        <ButtonAdicionar />        
+    <div className="w-full grid grid-cols-5 gap-4">
+      {cards.map((card:Receipt, key) => (
+          <CardDespesa 
+          categoria={card.categoria}
+          nomeDaDespesa={card.nomeDaDespesa}
+          dataDeVencimento={card.dataDeVencimento}
+          valor={card.valor}
+          key={key}
+          />
+        ))}
+      <ButtonAdicionar />
     </div>
   )
 }

@@ -1,5 +1,5 @@
 import { SearchBar } from "./searchBar";
-import { GridCards } from "./gridCards";
+import GridCards from "./gridCards";
 import { Pagination } from "./pagination";
 
 export const Despesas = () => {

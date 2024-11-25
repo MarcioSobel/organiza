@@ -1,13 +1,32 @@
 "use client";
-import { Pencil, Trash } from "@phosphor-icons/react";
+import { formatToBRL } from "@/utils/format-to-brl";
+import { PencilSimple, Trash } from "@phosphor-icons/react";
+import { useState } from "react";
 
-export const CardDespesa = () => {
+export type Receipt = {
+    id: string,
+    categoria: string,
+    nomeDaDespesa: string,
+    dataDeVencimento: string,
+    valor: number,
+    pago: boolean
+}
+interface CardAtributos{
+    categoria:string;
+    nomeDaDespesa:string;
+    dataDeVencimento:string;
+    valor?:number;       
+}
+
+export const CardDespesa:React.FC<CardAtributos> = ({categoria, nomeDaDespesa, dataDeVencimento, valor}) => {
+
+    const [mouseSobre, setMouseSobre ] = useState (false);
     return (
-        <div  className="w-52 h-36 border border-slate-900 rounded-lg border-r-2 border-b-2">
+        <div  className="w-full h-36 border border-slate-900 rounded-lg border-r-2 border-b-2 p-3 flex flex-col justify-around bg-off-white overflow-hidden">
             <div className="flex flex-row justify-between">
-            <div>
-                <h1>categoriaDespesa</h1>
-                <h1>nomeDespesa</h1>
+            <div className="text-gray-950">
+                <h1 className="text-xs font-normal font-roboto">{categoria}</h1>
+                <h1 className="text-base font-bold font-roboto">{nomeDaDespesa}</h1>
             </div>
             <div className="form-control">
                 <label className="cursor-pointer label">                    
@@ -15,15 +34,15 @@ export const CardDespesa = () => {
                 </label>
             </div>
             </div>
-            <h1>23/04/2024</h1>
+            <h1 className="text-stone-500 text-sm font-bold text-center">{dataDeVencimento}</h1>
             <div className="flex flex-row justify-between">
-                <h1>R$ 24,00</h1>
-                <div>
+                <h1 className="text-stone-900 text-base font-bold bg-white border px-4 py-2 border-neutral-500 rounded-lg">{formatToBRL(valor || 0)}</h1>
+                <div className="flex flex-row justify-between gap-2">
                     <button>
-                    <Pencil size={24} color="#181616" />
+                    <PencilSimple size={24} color={mouseSobre ? "#e0ac01" : "#181616"} weight={mouseSobre ? "fill" : "regular"} onMouseOver={()=>setMouseSobre(true)} onMouseOut={()=>setMouseSobre(false)} />
                     </button>
                     <button>
-                    <Trash size={24} color="#181616" />
+                    <Trash size={24} color={mouseSobre ? "#852418" : "#181616"} weight={mouseSobre ? "fill" : "regular"} onMouseOver={()=>setMouseSobre(true)} onMouseOut={()=>setMouseSobre(false)} />
                     </button>
                 </div>
             </div>
