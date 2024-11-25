@@ -11,7 +11,7 @@ export default function GridCards() {
   const[cards, setCards] = useState<Receipt[]>(data.card as Receipt[])
  
   return (
-    <div className="w-full grid grid-cols-5 gap-4">
+    <div className="w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 sm:grid-cols-2 gap-4 ">
       {cards.map((card:Receipt, key) => (
           <CardDespesa 
           id={card.id}

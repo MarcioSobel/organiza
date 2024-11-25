@@ -3,17 +3,18 @@ import { formatToBRL } from "@/utils/format-to-brl";
 import { PencilSimple, Trash } from "@phosphor-icons/react";
 import { useState } from "react";
 import { DeletarDespesa } from "./deleteDespesa";
+import { Receipt } from "lucide-react";
 
 export type Receipt = {
-    id?: string,
+    id: string,
     categoria: string,
     nomeDaDespesa: string,
     dataDeVencimento: string,
-    valor: number,
+    valor?: number,
     pago: boolean
 }
 interface CardAtributos{
-    id?: string,
+    id: string,
     categoria:string;
     nomeDaDespesa:string;
     dataDeVencimento:string;
@@ -22,14 +23,14 @@ interface CardAtributos{
 
 export const CardDespesa:React.FC<CardAtributos> = ({id, categoria, nomeDaDespesa, dataDeVencimento, valor}) => {
 
-    const handleDelete = (id?: string): void => {
-        console.log(id);
-        DeletarDespesa(id);        
+    const handleDelete = (codigo: string): void => {
+        console.log(codigo);
+        DeletarDespesa(codigo);       
       }
 
     const [mouseSobre, setMouseSobre ] = useState (false);
     return (
-        <div  className="w-full h-36 border border-slate-900 rounded-lg border-r-2 border-b-2 p-3 flex flex-col justify-around bg-off-white overflow-hidden">
+        <div  className="w-52 h-36 border border-slate-900 rounded-lg border-r-2 border-b-2 p-3 flex flex-col justify-around bg-off-white overflow-hidden min-w-44 ">
             <div className="flex flex-row justify-between">
             <div className="text-gray-950">
                 <h1 className="text-xs font-normal font-roboto">{categoria}</h1>
@@ -48,7 +49,7 @@ export const CardDespesa:React.FC<CardAtributos> = ({id, categoria, nomeDaDespes
                     <button>
                     <PencilSimple size={24} color={mouseSobre ? "#e0ac01" : "#181616"} weight={mouseSobre ? "fill" : "regular"} onMouseOver={()=>setMouseSobre(true)} onMouseOut={()=>setMouseSobre(false)} />
                     </button>
-                    <button type="submit" onClick={()=>handleDelete(id)}>
+                    <button type="submit" onClick={()=>handleDelete({id})}>
                     <Trash size={24} color={mouseSobre ? "#852418" : "#181616"} weight={mouseSobre ? "fill" : "regular"} onMouseOver={()=>setMouseSobre(true)} onMouseOut={()=>setMouseSobre(false)} />
                     </button>
                 </div>

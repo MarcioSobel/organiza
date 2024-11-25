@@ -6,6 +6,7 @@ import { Receipt } from "./cardDespesa";
 
 export const DeletarDespesa = (despesa: Receipt): void => {
     const id = despesa.id;
+    console.log(despesa.id);
    
     fetch(`http://localhost:3010/card/${id}`, {
         method: 'DELETE',
