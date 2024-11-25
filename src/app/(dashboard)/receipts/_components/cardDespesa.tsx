@@ -43,7 +43,7 @@ export const CardDespesa:React.FC<CardAtributos> = ({id, categoria, nomeDaDespes
             </div>
             <h1 className="text-stone-500 text-sm font-bold text-center">{dataDeVencimento}</h1>
             <div className="flex flex-row justify-between">
-                <h1 className="text-stone-900 text-base font-bold bg-white w-28 h-10 border px-4 py-2 border-neutral-500 rounded-lg">{formatToBRL(valor || 0)}</h1>
+                <h1 className="text-stone-900 text-base font-bold bg-white border px-4 py-2 border-neutral-500 rounded-lg">{formatToBRL(valor || 0)}</h1>
                 <div className="flex flex-row justify-between gap-2">
                     <button>
                     <PencilSimple size={24} color={mouseSobre ? "#e0ac01" : "#181616"} weight={mouseSobre ? "fill" : "regular"} onMouseOver={()=>setMouseSobre(true)} onMouseOut={()=>setMouseSobre(false)} />
