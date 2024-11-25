@@ -2,9 +2,10 @@
 import { formatToBRL } from "@/utils/format-to-brl";
 import { PencilSimple, Trash } from "@phosphor-icons/react";
 import { useState } from "react";
+import { DeletarDespesa } from "./deleteDespesa";
 
 export type Receipt = {
-    id: string,
+    id?: string,
     categoria: string,
     nomeDaDespesa: string,
     dataDeVencimento: string,
@@ -12,13 +13,19 @@ export type Receipt = {
     pago: boolean
 }
 interface CardAtributos{
+    id?: string,
     categoria:string;
     nomeDaDespesa:string;
     dataDeVencimento:string;
     valor?:number;       
 }
 
-export const CardDespesa:React.FC<CardAtributos> = ({categoria, nomeDaDespesa, dataDeVencimento, valor}) => {
+export const CardDespesa:React.FC<CardAtributos> = ({id, categoria, nomeDaDespesa, dataDeVencimento, valor}) => {
+
+    const handleDelete = (id?: string): void => {
+        console.log(id);
+        DeletarDespesa(id);        
+      }
 
     const [mouseSobre, setMouseSobre ] = useState (false);
     return (
@@ -41,7 +48,7 @@ export const CardDespesa:React.FC<CardAtributos> = ({categoria, nomeDaDespesa, d
                     <button>
                     <PencilSimple size={24} color={mouseSobre ? "#e0ac01" : "#181616"} weight={mouseSobre ? "fill" : "regular"} onMouseOver={()=>setMouseSobre(true)} onMouseOut={()=>setMouseSobre(false)} />
                     </button>
-                    <button>
+                    <button type="submit" onClick={()=>handleDelete({id})}>
                     <Trash size={24} color={mouseSobre ? "#852418" : "#181616"} weight={mouseSobre ? "fill" : "regular"} onMouseOver={()=>setMouseSobre(true)} onMouseOut={()=>setMouseSobre(false)} />
                     </button>
                 </div>

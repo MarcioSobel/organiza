@@ -9,14 +9,6 @@
       "pago": true
     },
     {
-      "id": "02",
-      "categoria": "streamings",
-      "nomeDaDespesa": "Max",
-      "dataDeVencimento": "10/08/2024",
-      "valor": 27.9,
-      "pago": false
-    },
-    {
       "id": "03",
       "categoria": "lazer",
       "nomeDaDespesa": "Viagem p/ Porto",
@@ -25,7 +17,7 @@
       "pago": true
     },
     {
-      "id": "04",
+      "codigo": "04",
       "categoria": "pessoal",
       "nomeDaDespesa": "Academia",
       "dataDeVencimento": "10/08/2024",
@@ -33,7 +25,7 @@
       "pago": true
     },
     {
-      "id": "05",
+      "codigo": "05",
       "categoria": "pessoal",
       "nomeDaDespesa": "Feira",
       "dataDeVencimento": "20/08/2024",
@@ -49,7 +41,7 @@
       "pago": false
     },
     {
-      "id": "07",
+      "codigo": "07",
       "categoria": "casa",
       "nomeDaDespesa": "Luz",
       "dataDeVencimento": "09/08/2024",
@@ -57,24 +49,11 @@
       "pago": false
     },
     {
-      "id": "08",
-      "categoria": "casa",
-      "nomeDaDespesa": "Aluguel",
-      "dataDeVencimento": "05/08/2024",
-      "valor": 1568,
-      "pago": true
-    },
-    {
-      "id": "09",
-      "categoria": "pessoal",
-      "nomeDaDespesa": "Skin-care",
-      "dataDeVencimento": "08/08/2024",
-      "valor": 250,
-      "pago": true
+      "id": "742e",
+      "categoria": "fsdsfdsfsd",
+      "nomeDaDespesa": "",
+      "dataDeVencimento": "",
+      "valor": 0
     }
-   
-    
-   
-   
   ]
 }
