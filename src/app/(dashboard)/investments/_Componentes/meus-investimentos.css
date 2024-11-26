@@ -2,9 +2,8 @@
     height: auto;
     border-radius: 8px;
     display: flex;
-    justify-content: center; /* Centraliza o conteúdo horizontalmente */
-    margin: 0 auto;         /* Centraliza horizontalmente no layout */
-    width: 400px;            /* Faz com que ocupe o espaço total */
+    justify-content: center; 
+    width: 400px;           
   }
   
   .carousel-container{
@@ -14,7 +13,7 @@
     position: relative;
   }
   
-  /* Estilo geral do item do carrossel */
+  
   .carousel-item {
     background-color: #f9f9f9; 
     border: 2.5px solid #333;   
@@ -25,7 +24,7 @@
     box-shadow: 2px 2px #2C2C2C; 
   }
   
-  .carousel-container .carousel-item:hover {
+  .remover .carousel-container .carousel-item:hover {
     background: #2C2C2C;
     border: 2.5px solid #000000;
   }
@@ -35,7 +34,7 @@
   }
   
   
-  /* Título e informações */
+
   .info {
     margin-top: 8px;
   }
@@ -66,7 +65,7 @@
     
   }
   
-  /* Cores específicas para cada banco */
+
   .badgeN {
     background-color: #8a05be; 
   }

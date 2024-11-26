@@ -14,12 +14,19 @@ export default function Investments() {
     }
   };
 
+  const handleRemoveItem = (itemId: number) => {
+    setSelectedItems((prev) => prev.filter((item) => item.id !== itemId));
+  };
+
   return (
     <div>
       <Botoes setState={setState} />
       {state === "home" && <Home onAddItem={handleAddItem} />}
       {state === "meus_investimentos" && (
-        <MeusInvestimentos selectedItems={selectedItems} />
+        <MeusInvestimentos
+          selectedItems={selectedItems}
+          onRemoveItem={handleRemoveItem}
+        />
       )}
     </div>
   );
