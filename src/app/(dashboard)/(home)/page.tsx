@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { hasCookie } from "cookies-next";
 import { useEffect } from "react";
 import { LastBudgets } from "./_components/last-budgets";
+import { InvestmentsCard } from "./_components/investments-card";
 
 export default function Home() {
   const router = useRouter();
@@ -21,8 +22,11 @@ export default function Home() {
         <div>
           <ReceiptsHistory />
         </div>
-        <div className="flex flex-col gap-4 w-full">
+        <div className="flex flex-col gap-4">
           <LastBudgets />
+        </div>
+        <div>
+          <InvestmentsCard />
         </div>
       </div>
       <p>Home</p>

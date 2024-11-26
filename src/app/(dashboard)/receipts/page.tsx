@@ -1,3 +1,11 @@
+import { Header } from "./_components/header";
+
 export default function Receipts() {
-  return <p>Receipts</p>;
+  return (
+    <div className="max-w-full">
+      <Header />
+      
+    </div>
+
+  );
 }
