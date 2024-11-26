@@ -1,0 +1,100 @@
+.carousel-container1 .carousel-item1 {
+  height: auto;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center; /* Centraliza o conteúdo horizontalmente */
+  margin: 0 auto;         /* Centraliza horizontalmente no layout */
+  width: 100%;            /* Faz com que ocupe o espaço total */
+}
+
+.carousel-container1{
+  display: flex;
+  gap:24px;
+  margin:5px;
+}
+
+/* Estilo geral do item do carrossel */
+.carousel-item1 {
+  background-color: #f9f9f9; /* Fundo claro */
+  border: 2.5px solid #333;   /* Borda preta */
+  border-radius: 12px;       /* Cantos arredondados */
+  padding: 16px;            /* Espaçamento interno */
+  box-sizing: border-box; /* Inclui padding e borda no cálculo do tamanho */
+  width: auto;            /* Permite que o tamanho se ajuste */
+  box-shadow: 2px 2px #2C2C2C;
+}
+
+.carousel-container1 .carousel-item1:hover {
+  background: #2C2C2C;
+  border: 2.5px solid #000000;
+}
+
+.carousel-item1:hover .card-title1 {
+    color:white
+}
+
+
+/* Título e informações */
+.info1 {
+  margin-top: 8px;
+}
+
+
+
+.card-title1 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333; /* Cor do título */
+  display: flex;
+  justify-content: center;
+}
+
+.badgeN, .badgeS, .badgeB, .badgeC, .badgeI {
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: white;
+  margin-bottom: 8px;
+  user-select: none;
+  
+}
+
+/* Cores específicas para cada banco */
+.badgeN {
+  background-color: #8a05be; 
+}
+
+.badgeS {
+  background-color: #e60000;
+}
+
+.badgeB {
+  background-color: #f0e223; 
+  color: #2C2C2C;
+}
+
+.badgeC{
+  background-color: #0047ab
+}
+
+.badgeI{
+  background-color: #da6302
+}
+
+
+.card-title1 {
+  font-size: 18px;
+  color: #333;
+}
+
+.bg-off-white {
+  background-color: #f5f5f5;
+}
+
+.border-off-black {
+  border-color: #333;
+}
+

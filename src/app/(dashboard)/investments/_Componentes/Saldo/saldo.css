@@ -1,0 +1,8 @@
+.olhinho{
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
