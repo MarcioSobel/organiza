@@ -66,8 +66,8 @@ const config = {
       },
       fontFamily: {
         roboto: "var(--font-roboto)",
-        "roboto-slab": "var(--font-roboto-slab)",
-      },
+        robotoSlab: "var(--font-roboto-slab)",
+      },      
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -89,7 +89,8 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), 
+    require('daisyui')],
 } satisfies Config;
 
 export default config;
